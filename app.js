@@ -60,9 +60,6 @@ app.post("/v1/chat/completions", async (req, res) => {
     });
     let question1 = await formatMessages(databody.messages);
     let firstSystemContent = getLastSystemContent(databody);
-    const proxyUrl = 'http://OQzXwbmh7D0tZkV:wNcbD0GSg8Qx9jj@103.229.116.151:45835';
-    // 创建HTTPS代理代理
-    const proxyAgent = new HttpsProxyAgent(proxyUrl);
     let systemcontent = "";
     if (firstSystemContent != null) {
         systemcontent =
@@ -78,7 +75,6 @@ app.post("/v1/chat/completions", async (req, res) => {
             "Authorization": "Bearer sk-178c41c902n71896bx",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
         },
-        agent: proxyAgent,
         json: {"delta_data":true,"history_msgs":[],"prompt":question}
     };
     // console.log(options)
