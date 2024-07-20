@@ -72,7 +72,6 @@ app.post("/v1/chat/completions", async (req, res) => {
         url: "https://www.voc.ai/api/v1/plg/prompt_stream",
         method: "POST",
         headers: {
-            "Authorization": "Bearer sk-178c41c902n71896bx",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
         },
         json: {"delta_data":true,"history_msgs":[],"prompt":question}
